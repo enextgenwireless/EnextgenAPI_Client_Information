@@ -66,6 +66,9 @@ This will output a csv data called Enextgendata.csv
 
 ## Rust
 
+![Alt text](https://th.bing.com/th/id/R.6263df62840add6bc6123157bac295f5?rik=kqtt2PAY49wR4A&pid=ImgRaw&r=0)
+
+
 Navigate to this [path](RustclientAPI/rustclientapi/src/main.rs) and  run 👇
 
 ```bash
