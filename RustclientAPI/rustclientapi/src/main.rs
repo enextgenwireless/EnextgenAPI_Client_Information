@@ -15,7 +15,7 @@
 
 //     // Build the API URL with query parameters
 //     let api_url = format!(
-//         "http://localhost:3000/api/v1/mtn_lte/data?startDate={}&endDate={}&limit=10&offset=0&sort=asc",
+//         "https://api.enextwireless.com/api/api/v1/mtn_lte/data?startDate={}&endDate={}&limit=10&offset=0&sort=asc",
 //         start_date, end_date
 //     );
 
@@ -48,7 +48,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Build the API URL with query parameters
     let api_url = format!(
-        "http://localhost:3000/api/v1/mtn_lte/data?startDate={}&endDate={}&limit=10&offset=0&sort=asc",
+        "https://api.enextwireless.com/api/api/v1/mtn_lte/data?startDate={}&endDate={}&limit=10&offset=0&sort=asc",
         start_date, end_date
     );
 

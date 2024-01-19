@@ -12,7 +12,7 @@
 
 # # API Configuration
 # api_key = 'dgd91cd716d2ed25c24d909e61116506534a421f0'  # Replace with your actual API key
-# api_url = 'http://localhost:3000/api/v1/mtn_lte/data'
+# api_url = 'https://api.enextwireless.com/api/api/v1/mtn_lte/data'
 
 # # Query Parameters
 # params = {
@@ -62,7 +62,7 @@ require 'uri'
 
 # API Configuration
 api_key = '6d91cd716d2ed25c24d909e61116506534a421f0'  # Replace with your actual API key
-api_url = 'http://localhost:3000/api/v1/mtn_lte/data'
+api_url = 'https://api.enextwireless.com/api/api/v1/mtn_lte/data'
 
 # Query Parameters
 params = {

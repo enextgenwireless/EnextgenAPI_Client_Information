@@ -3,7 +3,6 @@
 // // Copyright 2023
 // // Contact: adesoji@enextwireless.com , adesoji.alu@gmail.com
 
-
 package main
 
 import (
@@ -19,7 +18,7 @@ func main() {
 	startDate := "2023-11-29T15:47:00"
 	endDate := "2023-11-29T16:47:00"
 
-	apiURL := fmt.Sprintf("http://localhost:3000/api/v1/mtn_lte/data?startDate=%s&endDate=%s&limit=10&offset=0&sort=asc", startDate, endDate)
+	apiURL := fmt.Sprintf("https://api.enextwireless.com/api/api/v1/mtn_lte/data?startDate=%s&endDate=%s&limit=10&offset=0&sort=asc", startDate, endDate)
 
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", apiURL, nil)
@@ -58,52 +57,51 @@ func main() {
 }
 
 func writeCSV(data interface{}) error {
-    file, err := os.Create("Enextgendata.csv")
-    if err != nil {
-        return err
-    }
-    defer file.Close()
+	file, err := os.Create("Enextgendata.csv")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
 
-    writer := csv.NewWriter(file)
-    defer writer.Flush()
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
 
-    var headers []string // Declare headers
+	var headers []string // Declare headers
 
-    switch array := data.(type) {
-    case []interface{}:
-        if len(array) > 0 {
-            // Extract headers from the first record
-            if firstRecord, ok := array[0].(map[string]interface{}); ok {
-                for key := range firstRecord {
-                    headers = append(headers, key)
-                }
-                writer.Write(headers) // Write headers
-            }
+	switch array := data.(type) {
+	case []interface{}:
+		if len(array) > 0 {
+			// Extract headers from the first record
+			if firstRecord, ok := array[0].(map[string]interface{}); ok {
+				for key := range firstRecord {
+					headers = append(headers, key)
+				}
+				writer.Write(headers) // Write headers
+			}
 
-            // Write data rows
-            for _, record := range array {
-                if obj, ok := record.(map[string]interface{}); ok {
-                    var row []string
-                    for _, header := range headers {
-                        if value, exists := obj[header]; exists {
-                            switch v := value.(type) {
-                            case string:
-                                row = append(row, v)
-                            default:
-                                row = append(row, fmt.Sprintf("%v", v))
-                            }
-                        } else {
-                            row = append(row, "")
-                        }
-                    }
-                    writer.Write(row)
-                }
-            }
-        }
-    default:
-        return fmt.Errorf("unexpected JSON structure, expected top-level array")
-    }
+			// Write data rows
+			for _, record := range array {
+				if obj, ok := record.(map[string]interface{}); ok {
+					var row []string
+					for _, header := range headers {
+						if value, exists := obj[header]; exists {
+							switch v := value.(type) {
+							case string:
+								row = append(row, v)
+							default:
+								row = append(row, fmt.Sprintf("%v", v))
+							}
+						} else {
+							row = append(row, "")
+						}
+					}
+					writer.Write(row)
+				}
+			}
+		}
+	default:
+		return fmt.Errorf("unexpected JSON structure, expected top-level array")
+	}
 
-    return nil
+	return nil
 }
-

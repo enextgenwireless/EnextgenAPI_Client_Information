@@ -10,7 +10,7 @@
 
 # # API Configuration
 # api_key = '7d91cd716d2ed25c24d909e61116506534a421f0'  # Replace with your actual API key
-# api_url = 'http://localhost:3000/api/v1/mtn_lte/data'
+# api_url = 'https://api.enextwireless.com/api/api/v1/mtn_lte/data'
 
 # # Query Parameters
 # params = {
@@ -50,7 +50,7 @@ import pandas as pd
 
 # API Configuration
 api_key = '825fedddd36960b7c525070e76cc34970b4470dc'  # Replace with your actual API key
-api_url = 'http://localhost:3000/api/v1/mtn_lte/data'
+api_url = 'https://api.enextwireless.com/api/api/v1/mtn_lte/data'
 
 # Query Parameters
 params = {
