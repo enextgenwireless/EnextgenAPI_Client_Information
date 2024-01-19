@@ -79,7 +79,11 @@ This will output a csv data called Enextgendata.csv in an array format.
 
 ## : Note
 
+<<<<<<< HEAD
 Only 4G or lte was used as examples in the existing scripts, other network technologies like 2g,3g and 5G needs the modification of the apiUrl = `https://api.enextwireless.com/api/api/v1/mtn_lte/data?startDate=${startDate}&endDate=${endDate}&sort=${sort}&limit=${limit}&offset=${offset}`; by replacing `mtn_lte` `to mtn_3g` or `airtel_3g` based on your option, but the scripts for that be provided in subsequent version , refer to the API documentation  👉 [here]()
+=======
+Only 4G or lte was used as examples in the existing scripts, other network technologies like 2g,3g and 5G needs the modification of the apiUrl = `http://localhost:3000/api/v1/mtn_lte/data?startDate=${startDate}&endDate=${endDate}&sort=${sort}&limit=${limit}&offset=${offset}`; by replacing `mtn_lte` `to mtn_3g` or `airtel_3g` based on your option, but the scripts for that be provided in subsequent version , refer to the API documentation  👉 [here]()
+>>>>>>> 149a8925bad526cbdf05061ff3b272b3741ec7c6
 
 To create a new Rust application in your Ubuntu terminal, you can use the following steps:
 
