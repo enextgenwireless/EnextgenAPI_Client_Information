@@ -268,7 +268,7 @@ The image below describes the input validation method for the API data retrievea
 
 👉 All codes were tested on Ubuntu 20.04 LTS Focal Distribution 👈
 
-- The Bearer 7d91cd716d2ed25c24d909e61116506534a421f0" seen  👆 is just used for example and doesn't work 🔐 as the API key so signup [here]() to generate your  🔑  in order to have access to the API  to download the data .
+- The Bearer 7d91cd716d2ed25c24d909e61116506534a421f0" seen  👆 is just used for example and doesn't work 🔐 as the API key, therefore signup [here](https://api.enextwireless.com/login) to generate your  🔑  in order to have access to the API  to download the data .
 
 ### Copyright
 
